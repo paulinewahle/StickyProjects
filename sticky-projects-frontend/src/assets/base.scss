@@ -1,0 +1,56 @@
+//this would be base.scss
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700&display=swap');
+$background: #fafafa;
+$fontFamily: 'Raleway', sans-serif;
+$border: 3px solid black;
+$tapGreen: #E8EADA;
+$tapRed: #EADADA;
+$tapBlue: #DAE8EA;
+$tapPurple: #DADCEA;
+
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin titleH1 {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    color: black;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 2%;
+}
+@mixin titleH2 {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    color: black;
+    text-align: left;
+}
+@mixin titleH3 {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 2rem;
+    color: black;
+    text-align: left;
+}
+@mixin buttonStyle{
+    height: 3em;
+    box-sizing: border-box;
+    background: black;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    @include flexCenter;
+
+}
+
+
+///
