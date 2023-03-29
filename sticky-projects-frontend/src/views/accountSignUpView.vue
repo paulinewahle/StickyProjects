@@ -88,14 +88,14 @@ export default {
    
 
   <main>
-    
+    <div id="green-circle"></div>
     <div id="wrapper">
       <div>
         <RouterLink to="/account-signup" id="signUpToggle">SignUp</RouterLink> /
         <RouterLink to="/account-signin" id="signInToggle">SignIn</RouterLink>
       </div>
       <div>
-        <h2>Sign Up</h2>
+        <h1>Sign Up</h1>
         <p>And make your projects to sticky notes</p>
       </div>
       <div>
@@ -119,10 +119,6 @@ export default {
 <style scoped>
   main{
     align-items: flex-start;
-    background-image: url("/src/assets/img/absurd8.png");
-    background-size: 50%;
-    background-position: right center;
-    background-repeat: no-repeat;
   }
 
   

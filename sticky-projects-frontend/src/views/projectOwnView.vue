@@ -35,7 +35,7 @@ export default {
           this.loadedProjects = projects;
         });
       } else if (response.status == 500) {
-        this.errors.push("Server could send back projects of this user");
+        this.errors.push("Server could not send back projects of this user");
       }
     });
     console.log(this.loadedProjects)
@@ -62,16 +62,16 @@ export default {
       <ul v-for="project in loadedProjects">
         <li id="project-card" :style="cssProps" v-drag>
               
-              <p> <b>Due</b> {{project.expectedDeadline}}</p>
-              <div id="divider"></div>
+             
+              
               <div>
-
-              <h4> {{project.title}}</h4>
-              <h4> {{project.cardColor}}</h4>
-
+              <p class="date"> Due {{project.expectedDeadline}}</p>
+              <p id="client">{{project.clientName}}</p>
+              <h4 class="title"> {{project.title}}</h4>
+              <h4 class="description"> {{project.cardColor}}</h4>
               <p> {{project.description}}</p>
               </div>
-              <p id="client">{{project.clientName}}</p>
+              
               <RouterLink :to="`/update-project/${project.id}`" id="edit">Edit</RouterLink>
           
         </li>
@@ -98,45 +98,47 @@ export default {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 15vh;
-  /* z-index: 1; */
+  margin-top: 15vh; 
 }
 #project-card{
   height: 300px;
   width: 200px;
   border: 2px solid black;
-  background-color: #fafafa;
+  border-radius: 30px;
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: space-between;
   justify-content: space-between;
   background-color: var(--card-background-color);
-  cursor: move;
+  background-color: #E0FF9D;
+  z-index: 100;
+  padding: 10%;
+  box-sizing: border-box;
+}
+.date{
+  text-align: center;
+  margin-bottom: 20%;
+}
 
-}
-#divider{
-  height: 2px;
-  width: 100%;
-  background-color: black;
-}
 #edit{
   display: block;
-  background-color: black;
-  color: white;
+  color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   text-align: left;
   padding: 7% 10%;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 40px;
 }
-#client{
-  text-align: end;
+p {
+  margin: 0;
 }
-p, h4{
-  margin: 10%;
+h4{
+  margin: 2% 0  10% 0;
+  font-size: 25px;
 }
-#small{
-  font-size: .7em;
-}
+
 </style>

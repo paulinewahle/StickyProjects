@@ -64,14 +64,14 @@ export default {
 <template>
   
   <main>
-    
+    <div id="green-circle"> </div>
     <div id="wrapper">
       <div>
         <RouterLink to="/account-signup" id="signUpToggle">SignUp</RouterLink> /
         <RouterLink to="/account-signin" id="signInToggle">SignIn</RouterLink>
       </div>
       <div>
-        <h2>Sign In</h2>
+        <h1>Sign In</h1>
         <p>And make your projects to sticky notes</p>
       </div>
       <div>
@@ -87,7 +87,7 @@ export default {
         </div>
       </div>
 
-      <RouterLink to="/account-signup"> No account yet? Sign Up  </RouterLink>
+      <RouterLink to="/account-signup" class="nav-links"> No account yet? Sign Up  </RouterLink>
 
     </div>
   </main>
@@ -97,13 +97,7 @@ export default {
 <style scoped>
   main{
     align-items: flex-start;
-    background-image: url("/src/assets/img/absurd8.png");
-    background-size: 50%;
-    background-position: right center;
-    background-repeat: no-repeat;
   }
-
-  
   #signInToggle{
     font-weight: 700;
   }

@@ -87,7 +87,8 @@ export default {
 </script>
 <template>
   <main>
-    <div id="wrapper-wrapper" v-if="this.currentStatus == '' || this.currentStatus == 'loading'">
+    <div id="wrapper" v-if="this.currentStatus == '' || this.currentStatus == 'loading'">
+    
     <!--
       <div id="color-taps">
         <button class="color-tap green" v-on:click="addClassGreen"/> 
@@ -97,8 +98,9 @@ export default {
       </div>
     -->
     
-      <div id="color-wrapper" :class="{'wrapper-green': isAddClassGreen, 'wrapper-blue': isAddClassBlue, 'wrapper-red': isAddClassRed, 'wrapper-purple': isAddClassPurple}">
-      <RouterLink to="/my-projects" class="close"> </RouterLink>
+      <!-- <div id="color-wrapper" :class="{'wrapper-green': isAddClassGreen, 'wrapper-blue': isAddClassBlue, 'wrapper-red': isAddClassRed, 'wrapper-purple': isAddClassPurple}"> -->
+      <RouterLink to="/my-projects"> <div class="close"></div>  </RouterLink>
+      <h2> New Note</h2>
         <form @submit.prevent="createProject">
 
             <input type="text" placeholder="Title" maxlength="10" v-model="projectToBeCreated.title">
@@ -113,29 +115,29 @@ export default {
         <div id="feedback">
         <p v-if="this.currentStatus=='loading'"> Processing... </p>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
 
 
-    <div id="wrapper-wrapper" v-if="this.currentStatus == 'succeededCreating'">
+    <div id="wrapper" v-if="this.currentStatus == 'succeededCreating'">
     
    
     <!-- if the project was successfully created -->
-      <div id="color-wrapper" :class="{'wrapper-green': isAddClassGreen, 'wrapper-blue': isAddClassBlue, 'wrapper-red': isAddClassRed, 'wrapper-purple': isAddClassPurple}">
-      <RouterLink to="/my-projects" class="close"> </RouterLink>
+      <!-- <div id="color-wrapper" :class="{'wrapper-green': isAddClassGreen, 'wrapper-blue': isAddClassBlue, 'wrapper-red': isAddClassRed, 'wrapper-purple': isAddClassPurple}"> -->
+      <RouterLink to="/my-projects"> <div class="close"></div>  </RouterLink>
         <h3>Success!</h3>
         <p>Project has been created.</p>
         <RouterLink class="basic_button" to="/my-projects">Back to dashboard</RouterLink>
-      </div>
+      <!-- </div> -->
     </div>
 
     <!-- if the project was not created -->
-    <div id="wrapper-wrapper" v-if="this.currentStatus == 'failedCreating'">
+    <div id="wrapper" v-if="this.currentStatus == 'failedCreating'">
     
    
 
       <div id="color-wrapper" :class="{'wrapper-green': isAddClassGreen, 'wrapper-blue': isAddClassBlue, 'wrapper-red': isAddClassRed, 'wrapper-purple': isAddClassPurple}">
-      <RouterLink to="/my-projects" class="close"> </RouterLink>
+      <RouterLink to="/my-projects"> <div class="close"></div>  </RouterLink>
         <h3>Careful!</h3>
         <p> Project could not be created because: <ul v-for="error in errors"><li>{{error}}</li></ul></p>
         <RouterLink class="basic_button" to="/my-projects">Back to dashboard</RouterLink>
@@ -145,51 +147,39 @@ export default {
 </template>
 <style lang="scss" scoped>
 
-
-main{
-  background-image: url("/src/assets/img/absurd3.png");
-  background-size: 40%;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  align-items: flex-end;
-
+// #color-wrapper{
+//   height: 70%;
+//   width: 100%;
+//   border: 2px solid black;
+//   padding: 5%;
+// }
+// .wrapper-green{
+//   background-color: #E8EADA;
+// }
+// .wrapper-blue{
+//   background-color: #DAE8EA;
+// }
+// .wrapper-red{
+//   background-color: #EADADA;
+// }
+// .wrapper-purple{
+//   background-color: #DADCEA;
+// }
+h2{
+  margin: 0;
 }
-#wrapper-wrapper{
+#wrapper{
+  border-radius: 50px;
+  background-color: #E0FF9D;
   display: flex;
-  justify-content: flex-start;
-  width: 50vw;
-  margin: 5%;
-  height: 70vh;
-  margin-top: 15vh;
-}
-#color-wrapper{
-  height: 70%;
-  width: 100%;
-  border: 2px solid black;
-  padding: 5%;
-}
-form{
-  width: 80%;
-}
-.wrapper-green{
-  background-color: #E8EADA;
-}
-.wrapper-blue{
-  background-color: #DAE8EA;
-}
-.wrapper-red{
-  background-color: #EADADA;
-}
-.wrapper-purple{
-  background-color: #DADCEA;
+  justify-content: space-between;
 }
 .basic_button{
-  width: 50%;
+  color: #E0FF9D;
+  width: 100%;
 }
 .basic_button:hover{
-  outline: none;
-  border: none;
-  cursor: pointer;
+  border: 5px solid #E0FF9D;
 }
 
 </style>

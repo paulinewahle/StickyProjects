@@ -4,7 +4,6 @@
 
 <template>
   <footer>
-      <i>Drag Cards to Create your Order</i>
       <RouterLink to="/new-project" class="basic_button">New Project</RouterLink> 
   </footer>
 </template>
@@ -14,13 +13,12 @@
       position: fixed;
       top: 80vh;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       width: 98%;
       padding: 1%;
       align-items: baseline;
       .basic_button{
         width: 30%;
       }
-    
     }
 </style>

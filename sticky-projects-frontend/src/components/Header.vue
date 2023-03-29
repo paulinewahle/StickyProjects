@@ -21,8 +21,11 @@
 <template>
  
     <header>
-        
         <div>
+          <h2>Sticky Projects</h2>
+        </div>
+        <div>
+            
             <h3 v-if="$route.path =='/my-projects'"> My Projects </h3>
             <h3 v-else-if="$route.path =='/my-account'"> My Account</h3>
             <h3 v-else-if="$route.path =='/new-project'"> New Project</h3>
@@ -30,7 +33,7 @@
         </div>    
         <div>
           <RouterLink to="/my-account">My Profile</RouterLink> 
-          <button @click="signOut" class="basic_smallbutton">Sign Out</button> 
+          <button @click="signOut">Sign Out</button> 
         </div>
       
     </header>
@@ -44,32 +47,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 96%;
-    margin: 0 2%;
+    width: 80vw;
+    margin: 0 10vw;
     padding: 45px 1%;
     box-sizing: border-box;
-    border-bottom: 2px solid black;
     position: fixed;
     z-index: 100;
-    background-color: #fafafa;
-    img{
-      height: 100%;
-      margin: 0 5px 0 0;
-      }
 
-      
-      a{
+      button, a{
         background: none;
-        font-family: $fontFamily;
+        font-family: $bodyText;
         border: none;
         font-size: 1em;
         margin: 0 50px ;
-        border-bottom: 2px solid black;
-        cursor: pointer;
-        border: none;
         text-decoration: none;
       }
-      
+
+      h2{
+        display: inline-block;
+        font-size: 2rem;
+        margin: 0;
+      }
   }
 
 </style>

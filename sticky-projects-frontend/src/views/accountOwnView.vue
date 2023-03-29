@@ -133,7 +133,7 @@ export default {
 <template>
   <main>
     <div id="wrapper">
-      <RouterLink to="/my-projects" class="close"> </RouterLink>
+      <RouterLink to="/my-projects"> <div class="close"></div> </RouterLink>
       <h2>
           Edit Account
       </h2>
@@ -173,22 +173,21 @@ export default {
 </template>
 
 <style scoped>
-main{
-  background-image: url("/src/assets/img/absurd7.png");
-  background-size: 50%;
-  background-position: right bottom;
- padding-top: 15vh;
-}
 
 input{
-  margin: 5% 0;
+  margin: 0% 0;
 }
 label{
   font-weight: 700;
 }
 #feedback{
   height: 2em;
-  margin: 5% 0 ;
+  margin: 0% 0 ;
 }
-
+h2{
+  margin: 0;
+}
+#wrapper{
+  width: 50vw;
+}
 </style>
